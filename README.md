@@ -1,6 +1,6 @@
 # Spotify2 releases
 
-Official public download repository for Spotify2 Kodi release packages.
+Public download repository for Spotify2 Kodi release packages.
 
 > **Spotify Premium required:** A Spotify Premium account is required to use Spotify2.
 
