@@ -56,6 +56,6 @@ Spotify2 began from [**`glk1001/plugin.audio.spotify` v1.3.14**](https://github.
 
 Spotify2 builds on the work of the Kodi Spotify add-on maintainers, including the Kodi community line and the later `glk1001/plugin.audio.spotify` updates. Historical project documentation also credits Marcel Veldt, Ldsz, Elkropac and FernetMenta.
 
-Spotty/librespot work by Michael Herger and the librespot contributors provides the native Spotify transport/playback foundation used by this project. Existing license and attribution files remain authoritative.
+Spotty/librespot work by [Michael Herger](https://github.com/michaelherger/librespot) and the [librespot contributors](https://github.com/librespot-org/librespot) provides the native Spotify transport/playback foundation used by this project. Existing license and attribution files remain authoritative.
 
 Spotify2 is distributed under the [GNU General Public License v3.0](LICENSE). Corresponding source and required build material are published with each release.
