@@ -42,6 +42,12 @@ Used for dedicated playback on supported Windows and ARM targets.
 
 This repository contains only official release downloads, minimal installation documentation and licensing information. Issues, pull requests, projects, wiki and discussions are disabled.
 
+## Disclaimer and support
+
+Spotify2 is an independent, unofficial community project and is provided **as is**, without warranty, guarantee of functionality or any commitment to provide support. It is not affiliated with, endorsed, sponsored or approved by Spotify, the Kodi project or the maintainers of its predecessor projects. Use it at your own risk.
+
+Existing license terms and attribution files remain authoritative.
+
 ## Project origin
 
 Spotify2 began from [**`glk1001/plugin.audio.spotify` v1.3.14**](https://github.com/glk1001/glk1001.github.io/tree/master) (2025-02-10), itself part of the long-running Kodi Spotify add-on lineage. The early Spotify2 README also preserved attribution to Marcel Veldt's earlier add-on work and thanked Ldsz, Elkropac and FernetMenta for the Python 3.9+ transition.
