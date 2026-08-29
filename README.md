@@ -3,6 +3,8 @@
 Public download repository for Spotify2 Kodi release packages.
 
 > **Spotify Premium required:** A Spotify Premium account is required to use Spotify2.
+> 
+> Historical Kodi.tv discussion/support thread for the predecessor project [`glk1001/plugin.audio.spotify`](https://github.com/glk1001/plugin.audio.spotify): [Kodi forum thread](https://forum.kodi.tv/showthread.php?tid=265356&highlight=premium).
 
 ## Downloads
 
