@@ -17,6 +17,27 @@ Do not extract the selected platform ZIP. In Kodi, open **Add-ons → Install fr
 
 Direct installation does not provide automatic updates. Download and install a newer package manually when a later release is published.
 
+## Spotty architecture
+
+Spotify2 intentionally separates Spotty roles and generations.
+
+### Legacy Spotty v1.x / librespot 0.4.2
+
+Used for Device Connect/authentication/token operations where required, and as the current complete runtime on some legacy X86/macOS branches.
+
+### Modern Spotty v2.x / librespot 0.8.x
+
+Used for dedicated playback on supported Windows and ARM targets.
+
+### Current platform policy
+
+- Windows: legacy authentication payload for Device Connect/auth/token plus a dedicated modern Windows x64 playback payload.
+- ARM Android: legacy auth payload plus dedicated modern ARMv7/AArch64 playback payloads.
+- ARM Linux/LibreELEC: legacy auth-compat Device Connect/token path plus platform playback payload.
+- Linux X86/i386/`x86_64`: native legacy Spotty for auth/token/playback in the current released branch.
+- macOS Intel/Apple Silicon: universal legacy Spotty for auth/token/playback in the current released branch. **Not user-tested:** no user test has yet been completed for this branch.
+- Android X86/`x86_64`: legacy auth/token payloads only; no silent legacy playback fallback. **Not user-tested:** no user test has yet been completed for this branch.
+
 ## Repository purpose
 
 This repository contains only official release downloads, minimal installation documentation and licensing information. Issues, pull requests, projects, wiki and discussions are disabled.
