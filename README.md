@@ -34,7 +34,7 @@ Used for dedicated playback on supported Windows and ARM targets.
 - Windows: legacy authentication payload for Device Connect/auth/token plus a dedicated modern Windows x64 playback payload.
 - ARM Android: legacy auth payload plus dedicated modern ARMv7/AArch64 playback payloads.
 - ARM Linux/LibreELEC: legacy auth-compat Device Connect/token path plus platform playback payload.
-- Linux X86/i386/`x86_64`: native legacy Spotty for auth/token/playback in the current released branch.
+- Linux X86/i386/`x86_64`: native legacy Spotty for auth/token/playback in the current released branch. **Not user-tested:** no user test has yet been completed for this branch.
 - macOS Intel/Apple Silicon: universal legacy Spotty for auth/token/playback in the current released branch. **Not user-tested:** no user test has yet been completed for this branch.
 - Android X86/`x86_64`: legacy auth/token payloads only; no silent legacy playback fallback. **Not user-tested:** no user test has yet been completed for this branch.
 
