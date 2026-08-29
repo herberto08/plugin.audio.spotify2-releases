@@ -21,4 +21,14 @@ Direct installation does not provide automatic updates. Download and install a n
 
 This repository contains only official release downloads, minimal installation documentation and licensing information. Issues, pull requests, projects, wiki and discussions are disabled.
 
+## Project origin
+
+Spotify2 began from [**`glk1001/plugin.audio.spotify` v1.3.14**](https://github.com/glk1001/glk1001.github.io/tree/master) (2025-02-10), itself part of the long-running Kodi Spotify add-on lineage. The early Spotify2 README also preserved attribution to Marcel Veldt's earlier add-on work and thanked Ldsz, Elkropac and FernetMenta for the Python 3.9+ transition.
+
+## Upstream and acknowledgements
+
+Spotify2 builds on the work of the Kodi Spotify add-on maintainers, including the Kodi community line and the later `glk1001/plugin.audio.spotify` updates. Historical project documentation also credits Marcel Veldt, Ldsz, Elkropac and FernetMenta.
+
+Spotty/librespot work by Michael Herger and the librespot contributors provides the native Spotify transport/playback foundation used by this project. Existing license and attribution files remain authoritative.
+
 Spotify2 is distributed under the [GNU General Public License v3.0](LICENSE). Corresponding source and required build material are published with each release.
