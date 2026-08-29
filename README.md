@@ -15,6 +15,8 @@ Open the [Spotify2 releases](https://github.com/herberto08/plugin.audio.spotify2
 
 Do not extract the selected platform ZIP. In Kodi, open **Add-ons → Install from zip file** and select the downloaded package.
 
+> **Recommended:** Restart Kodi once after installing or updating Spotify2 before starting the add-on.
+
 Direct installation does not provide automatic updates. Download and install a newer package manually when a later release is published.
 
 ## Spotty architecture
