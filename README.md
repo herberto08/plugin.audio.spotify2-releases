@@ -20,6 +20,8 @@ Do not extract the selected platform ZIP. In Kodi, open **Add-ons → Install fr
 
 Direct installation does not provide automatic updates. Download and install a newer package manually when a later release is published.
 
+> **Important:** Use one of the three platform ZIP files listed above. GitHub's automatically generated **Source code (zip)** and **Source code (tar.gz)** archives are repository snapshots and are not installable Kodi add-ons.
+
 ## Spotty architecture
 
 Spotify2 intentionally separates Spotty roles and generations.
