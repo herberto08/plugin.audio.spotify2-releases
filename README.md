@@ -13,7 +13,6 @@ Open the [Spotify2 releases](https://github.com/herberto08/plugin.audio.spotify2
 - `plugin.audio.spotify2-<version>-WINDOWS.zip` — Windows
 - `plugin.audio.spotify2-<version>-ARM.zip` — ARM Linux/LibreELEC and Android ARM
 - `plugin.audio.spotify2-<version>-X86-MACOS.zip` — Linux/Android x86 and macOS
-- `plugin.audio.spotify2-<version>-source.zip` — corresponding source and build material
 
 Do not extract the selected platform ZIP. In Kodi, open **Add-ons → Install from zip file** and select the downloaded package.
 
@@ -62,4 +61,4 @@ Spotify2 builds on the work of the Kodi Spotify add-on maintainers, including th
 
 Spotty/librespot work by [Michael Herger](https://github.com/michaelherger/librespot) and the [librespot contributors](https://github.com/librespot-org/librespot) provides the native Spotify transport/playback foundation used by this project. Existing license and attribution files remain authoritative.
 
-Spotify2 is distributed under the [GNU General Public License v3.0](LICENSE). Corresponding source and required build material are published with each release.
+Spotify2 is distributed under the [GNU General Public License v3.0](LICENSE).
