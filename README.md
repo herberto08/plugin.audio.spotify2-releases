@@ -43,6 +43,17 @@ Used for dedicated playback on supported Windows and ARM targets.
 - macOS Intel/Apple Silicon: universal legacy Spotty for auth/token/playback in the current released branch. **Not user-tested:** no user test has yet been completed for this branch.
 - Android X86/`x86_64`: legacy auth/token payloads only; no silent legacy playback fallback. **Not user-tested:** no user test has yet been completed for this branch.
 
+## Spotify Web API limits and quota handling
+
+Spotify2 uses the [Spotify Web API](https://developer.spotify.com/documentation/web-api) for browsing, metadata and optional account-profile information. Each request is associated with the configured application **Client ID**. Using a personal Client ID can avoid sharing one application's traffic with unrelated installations, but it does not bypass Spotify's limits. A development-mode application is subject to its own allowlist and quota restrictions.
+
+- **Rate limits:** Spotify calculates the application-wide rate over a rolling 30-second window and does not publish one fixed request count for every app. Spotify2 therefore uses a process-shared API gate, at least two seconds between requests and a conservative local budget of eight requests per 30 seconds. HTTP 429 responses activate the server-provided `Retry-After` delay; cached data is reused where safe instead of immediately repeating calls.
+- **`GET /v1/me`:** Spotify documents no endpoint-specific limit of ten calls. Spotify2 uses this request only for optional background profile restoration, reuses the persistent profile and suppresses repeated profile requests for one hour. Failure or rate limiting does not invalidate credentials or the playback token.
+- **Artist albums:** `GET /v1/artists/{id}/albums` currently accepts at most **10 items per response** (default 5). This is a response page-size limit, not a limit of ten requests or ten albums in total. Spotify2 follows the endpoint's `offset`/`next` pagination when building Kodi pages.
+- **Quota modes:** [Development mode and extended quota mode](https://developer.spotify.com/documentation/web-api/concepts/quota-modes) are separate from the rolling rate limit. Development-mode requests also count against endpoint quota buckets whose groupings and exact limits Spotify may change. Spotify2 distinguishes ordinary rate limiting from `QUOTA_EXCEEDED`, stops further calls through the shared gate and avoids caching a gated empty response as a successful result.
+
+See Spotify's current [rate-limit documentation](https://developer.spotify.com/documentation/web-api/concepts/rate-limits) and the endpoint reference for [Get Artist's Albums](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
+
 ## Repository purpose
 
 This repository contains only official release downloads, minimal installation documentation and licensing information. Issues, pull requests, projects, wiki and discussions are disabled.
