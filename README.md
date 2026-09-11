@@ -3,7 +3,7 @@
 Public download repository for Spotify2 Kodi release packages.
 
 > **Spotify Premium required:** A Spotify Premium account is required to use Spotify2.
-> 
+>
 > Historical Kodi.tv discussion/support thread for the predecessor project [`glk1001/plugin.audio.spotify`](https://github.com/glk1001/plugin.audio.spotify): [Kodi forum thread](https://forum.kodi.tv/showthread.php?tid=265356&highlight=premium).
 
 ## Downloads
@@ -48,12 +48,16 @@ Used for dedicated playback on supported Windows and ARM targets.
 Spotify2 uses the [Spotify Web API](https://developer.spotify.com/documentation/web-api) for browsing, metadata, and optional account-profile information. Each request is associated with the configured application **Client ID**. Using a personal Client ID can avoid sharing one application's traffic with unrelated installations, but it does not bypass Spotify's API limits. Applications running in development mode are also subject to Spotify's allowlist and quota restrictions.
 
 - **Rate limits:** Spotify calculates application-wide request rates over a rolling 30-second window and does not publish a single fixed request limit that applies to every application. Spotify2 therefore uses a process-shared API gate, enforces at least two seconds between requests, and applies a conservative local budget of eight requests per 30 seconds. HTTP `429` responses honor Spotify's `Retry-After` value, while cached data is reused where safe instead of immediately repeating requests.
+
 - **`GET /v1/me`:** Spotify does not document an endpoint-specific limit of ten calls for this endpoint. Spotify2 uses `/v1/me` only for optional background profile restoration, reuses the persisted profile, and suppresses repeated profile requests for one hour. A failed or rate-limited profile request does not invalidate the user's credentials or playback token.
-- **Artist albums:** Spotify's current documentation specifies a **default page size of 5 and a maximum of 10 items per request** for `GET /v1/artists/{id}/albums`. This is a response page-size restriction—not a limit of ten requests or ten albums in total. Spotify2 handles this restriction transparently and uses Spotify's pagination to assemble larger Kodi browse pages while keeping each individual API request within the endpoint's maximum of 10 items. See [Get Artist's Albums](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
+
+- **Artist albums:** Spotify's current documentation specifies a **default page size of 5 and a maximum of 10 items per request** for `GET /v1/artists/{id}/albums`. This is a response page-size restriction—not a limit of ten requests or ten albums in total. Spotify2 handles this restriction transparently and uses Spotify's pagination to assemble larger Kodi browse pages while keeping each individual API request within the endpoint's maximum of 10 items. Starting with v1.2.20, the combined artist album/single browse view also includes **compilations** (`album,single,compilation`). Market selection continues to follow the authenticated Spotify account; no country such as `SK` or `DE` is hard-coded. See [Get Artist's Albums](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
+
 - **Other endpoint-specific limits:** Spotify Web API limits are not necessarily identical across endpoints and may change over time. The artist-albums restriction must therefore not be treated as a global Web API limit. Spotify2 keeps endpoint-specific restrictions separate so that APIs allowing larger page sizes can continue to use them.
+
 - **Quota modes:** [Development mode and extended quota mode](https://developer.spotify.com/documentation/web-api/concepts/quota-modes) are separate from the rolling rate limit. Development-mode requests can additionally be subject to endpoint quota buckets whose grouping and exact limits may be changed by Spotify. Spotify2 distinguishes ordinary rate limiting from `QUOTA_EXCEEDED`, stops further calls through the shared API gate when required, and avoids caching a quota-gated empty response as a successful result.
 
-Spotify tightened several Web API restrictions in 2026. For example, the `/search` endpoint was also reduced to a maximum of **10 results per request**. Spotify2 therefore treats documented page-size restrictions as **endpoint-specific compatibility requirements** rather than assuming one global maximum for all Spotify Web API calls.
+Spotify tightened several Web API restrictions in 2026. For example, the `/search` endpoint is limited to a maximum of **10 results per request**, while other endpoints continue to support larger page sizes. Spotify2 therefore treats documented page-size restrictions as **endpoint-specific compatibility requirements** rather than assuming one global maximum for all Spotify Web API calls.
 
 For further details, see Spotify's current [Web API documentation](https://developer.spotify.com/documentation/web-api), [rate-limit documentation](https://developer.spotify.com/documentation/web-api/concepts/rate-limits), and the endpoint reference for [Get Artist's Albums](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
 
