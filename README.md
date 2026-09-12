@@ -10,10 +10,10 @@ Public download repository for Spotify2 Kodi release packages.
 
 Open the [Spotify2 releases](https://github.com/herberto08/plugin.audio.spotify2-releases/releases) page and download the ZIP matching your Kodi platform:
 
-* `plugin.audio.spotify2-<version>-WINDOWS.zip` — Windows 10/11 **64-bit (x64)**
-* `plugin.audio.spotify2-<version>-WINDOWS-32BIT.zip` — Windows 10 **32-bit (x86)**
-* `plugin.audio.spotify2-<version>-ARM.zip` — ARM Linux/LibreELEC and Android ARM
-* `plugin.audio.spotify2-<version>-X86-MACOS.zip` — Linux/Android x86 and macOS
+- `plugin.audio.spotify2-<version>-WINDOWS.zip` — Windows 10/11 **64-bit (x64)**
+- `plugin.audio.spotify2-<version>-WINDOWS-32BIT.zip` — Windows 10 **32-bit (x86)**
+- `plugin.audio.spotify2-<version>-ARM.zip` — ARM Linux/LibreELEC and Android ARM
+- `plugin.audio.spotify2-<version>-X86-MACOS.zip` — Linux/Android x86 and macOS
 
 The Windows packages are architecture-specific. Use `WINDOWS.zip` with a 64-bit Kodi installation and `WINDOWS-32BIT.zip` only with a 32-bit Kodi installation on Windows 10. Windows 11 does not provide a 32-bit edition.
 
@@ -23,7 +23,7 @@ Do not extract the selected platform ZIP. In Kodi, open **Add-ons → Install fr
 
 Direct installation does not provide automatic updates. Download and install a newer package manually when a later release is published.
 
-> **Important:** Use one of the three platform ZIP files listed above. GitHub's automatically generated **Source code (zip)** and **Source code (tar.gz)** archives are repository snapshots and are not installable Kodi add-ons.
+> **Important:** Use one of the four platform ZIP files listed above. GitHub's automatically generated **Source code (zip)** and **Source code (tar.gz)** archives are repository snapshots and are not installable Kodi add-ons.
 
 ## Spotty architecture
 
@@ -37,7 +37,7 @@ Used for Device Connect/authentication/token operations where required, and as t
 
 Used for dedicated playback on supported Windows and ARM targets.
 
-#### Windows 10 32-bit package
+### Windows 10 32-bit package
 
 v1.2.21 additionally provides a dedicated package for **Windows 10 32-bit (x86)**:
 
@@ -45,8 +45,8 @@ v1.2.21 additionally provides a dedicated package for **Windows 10 32-bit (x86)*
 
 This package is intended only for a 32-bit Kodi installation. It contains two native PE32/i386 binaries:
 
-* **Spotty v1.3.1 / librespot 0.4.2** for Device Connect, authentication and token operations.
-* **Spotty v2.1.2 / librespot 0.8.0** for playback and audio prefetch.
+- **Spotty v1.3.1 / librespot 0.4.2** for Device Connect, authentication and token operations.
+- **Spotty v2.1.2 / librespot 0.8.0** for playback and audio prefetch.
 
 The modern playback binary was built from [`michaelherger/librespot` commit `3b817a9`](https://github.com/michaelherger/librespot/commit/3b817a95728bac7c3b11e6a3621c725ca65854fa), matching the Spotty v2.1.2 source generation used by the existing Windows x64 playback package.
 
